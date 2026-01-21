@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Chatbot (Gemini)</title>
+    <style>
+        body { font-family: Arial; background: #f2f2f2; }
+        .chat-box {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .messages {
+            height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .user { color: blue; margin-bottom: 5px; }
+        .bot { color: green; margin-bottom: 10px; }
+        input { width: 75%; padding: 8px; }
+        button { padding: 8px 15px; }
+    </style>
+</head>
+
+<body>
+<div class="chat-box">
+    <h3>Employee Information Chatbot (Gemini)</h3>
+
+    <div class="messages" id="messages"></div>
+
+    <input type="text" id="query" placeholder="Ask your question..." />
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+function addMessage(text, cls) {
+    let div = document.createElement("div");
+    div.className = cls;
+    div.innerText = text;
+    document.getElementById("messages").appendChild(div);
+}
+
+function sendMessage() {
+    let query = document.getElementById("query").value;
+    if (!query) return;
+
+    addMessage("You: " + query, "user");
+    document.getElementById("query").value = "";
+
+    fetch("/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: query })
+    })
+    .then(res => res.json())
+    .then(data => {
+        addMessage("Bot: " + data.answer, "bot");
+    });
+
+}
+</script>
+</body>
+</html>
