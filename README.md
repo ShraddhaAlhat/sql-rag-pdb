@@ -182,7 +182,7 @@ I found multiple employees. Please specify one:
 ---
 ## Output
 
-![Application Output](Screenshot 2026-01-22 123016.png)
+<img src="Screenshot 2026-01-22 123016.png" width="600">
 
 ---
 ## 🧠 How It Works (High Level)
