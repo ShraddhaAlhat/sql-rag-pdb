@@ -180,7 +180,11 @@ I found multiple employees. Please specify one:
 ```
 
 ---
+## Output
 
+![Application Output](Screenshot 2026-01-22 123016.png)
+
+---
 ## 🧠 How It Works (High Level)
 
 1. **User Query** → Intent detection (salary / department / joining date)
