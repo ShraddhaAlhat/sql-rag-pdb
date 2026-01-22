@@ -182,7 +182,7 @@ I found multiple employees. Please specify one:
 ---
 ## Output
 
-<img src="Screenshot 2026-01-22 123016.png" width="600">
+<img src="Screenshot 2026-01-22 150230.png" width="600">
 
 ---
 ## 🧠 How It Works (High Level)
